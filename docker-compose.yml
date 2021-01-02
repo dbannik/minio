@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    app:
+        image: minio/minio
+        environment:
+            MINIO_ACCESS_KEY: ${ACCESS_KEY}
+            MINIO_SECRET_KEY: ${SECRET_KEY}
+        volumes:
+            - data:/data:rw
+        command: server /data
+
+volumes:
+    data:
