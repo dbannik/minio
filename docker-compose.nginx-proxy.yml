@@ -3,9 +3,9 @@ version: "3"
 services:
     app:
         environment:
-            VIRTUAL_HOST: $HOSTNAME
-            VIRTUAL_PORT: 9000
-            LETSENCRYPT_HOST: $HOSTNAME
+            MINIO_SERVER_URL: ${HOSTNAME}
+            VIRTUAL_HOST: ${HOSTNAME}:9000,${CONSOLE_HOSTNAME}:9001
+            LETSENCRYPT_HOST: ${HOSTNAME},${CONSOLE_HOSTNAME}
 
 networks:
     default:
