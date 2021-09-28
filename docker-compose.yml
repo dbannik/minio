@@ -4,8 +4,8 @@ services:
     app:
         image: minio/minio
         environment:
-            MINIO_ACCESS_KEY: ${ACCESS_KEY}
-            MINIO_SECRET_KEY: ${SECRET_KEY}
+            MINIO_ROOT_USER: ${ACCESS_KEY}
+            MINIO_ROOT_PASSWORD: ${SECRET_KEY}
         volumes:
             - data:/data:rw
         command: server /data
